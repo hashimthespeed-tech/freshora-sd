@@ -102,17 +102,19 @@
       box-shadow: 0 20px 40px rgba(0, 210, 196, 0.12);
     }
 
-    /* Ambient card corner teal bubbles */
-    .bin-card::before {
-      content: "";
+    /* Translucent brand bubbles inside cards */
+    .card-bubble {
       position: absolute;
-      top: -10%;
-      right: -10%;
-      width: 150px;
-      height: 150px;
-      background: radial-gradient(circle, rgba(0, 210, 196, 0.12) 0%, transparent 70%);
       border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 210, 196, 0.14) 0%, rgba(0, 210, 196, 0.02) 65%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
     }
+    
+    .cb-1 { width: 140px; height: 140px; top: -30px; left: -40px; }
+    .cb-2 { width: 100px; height: 100px; bottom: 120px; right: -30px; }
+    .cb-3 { width: 120px; height: 120px; top: 160px; right: -40px; }
+    .cb-4 { width: 80px; height: 80px; bottom: -20px; left: 10px; }
 
     .card-top {
       text-align: center;
@@ -342,6 +344,10 @@
     
     <!-- CARD 1 (Left Side) -->
     <div class="bin-card">
+      <div class="card-bubble cb-1"></div>
+      <div class="card-bubble cb-2"></div>
+      <div class="card-bubble cb-3"></div>
+      <div class="card-bubble cb-4"></div>
       <div class="card-top">
         <span class="tag-cutout-hint"></span>
         <div class="card-logo">
@@ -388,6 +394,10 @@
 
     <!-- CARD 2 (Right Side - Identical copy to save paper when printing) -->
     <div class="bin-card">
+      <div class="card-bubble cb-1"></div>
+      <div class="card-bubble cb-2"></div>
+      <div class="card-bubble cb-3"></div>
+      <div class="card-bubble cb-4"></div>
       <div class="card-top">
         <span class="tag-cutout-hint"></span>
         <div class="card-logo">
