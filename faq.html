@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — Freshora SD</title>
+  <meta name="description" content="Frequently Asked Questions about our residential trash bin cleaning service in El Cajon, La Mesa, and Santee.">
+  
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+  
+  <style>
+    /* Accordion Styles */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto 100px;
+      padding: 0 16px;
+    }
+
+    .faq-item {
+      background: #FFFFFF;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-card);
+      border: 2px solid transparent;
+      transition: var(--transition);
+      overflow: hidden;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(0, 210, 196, 0.2);
+    }
+
+    .faq-item.active {
+      border-color: var(--brand-mint);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      padding: 24px 28px;
+      background: none;
+      border: none;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .faq-question {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--brand-teal-dark);
+      margin: 0;
+      line-height: 1.3;
+      padding-right: 16px;
+    }
+
+    .faq-icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(0, 210, 196, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-mint);
+      font-size: 18px;
+      font-weight: bold;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-icon-box {
+      background: var(--brand-mint);
+      color: var(--brand-teal-dark);
+      transform: rotate(45deg);
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .faq-content-inner {
+      padding: 0 28px 28px;
+      font-size: 16px;
+      color: #475569;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .faq-content-inner strong {
+      color: var(--brand-teal-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Continuous Ambient Viewport Bubbles Flow -->
+  <div class="ambient-bubble-stream"></div>
+
+  <div class="hero-wrapper">
+    <!-- Header -->
+    <header class="hampy-header">
+      <div class="container hampy-header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="hampy-logo">
+          <span class="hampy-logo-title">freshora</span>
+          <span class="hampy-logo-sub">happy bins</span>
+        </a>
+
+        <!-- Center Floating White Pill Capsule Menu -->
+        <nav class="hampy-nav-capsule">
+          <a class="hampy-nav-link" href="pricing.html" style="margin-right: 8px;">Pricing</a>
+          <a class="hampy-nav-link" href="transformations.html" style="margin-right: 8px;">Transformations</a>
+          <a class="hampy-nav-link active" href="faq.html" style="margin-right: 8px;">FAQ</a>
+          <a class="hampy-nav-link" href="booking.html" style="background: var(--brand-mint); color: var(--brand-teal-dark); border-radius: 12px; padding: 6px 14px; font-weight: 800; border: 1.5px solid rgba(0, 210, 196, 0.2);">Booking</a>
+        </nav>
+
+        <!-- Right Circle Buttons -->
+        <div class="hampy-header-right">
+          <button class="hampy-circle-btn">EN</button>
+          <a href="booking.html" class="hampy-circle-btn" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">≡</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="position: relative; z-index: 10;">
+      
+      <!-- FAQ Hero Title Section -->
+      <section class="container" style="padding: 100px 0 48px; text-align: center;">
+        <h1 class="hampy-hero-title" style="font-size: 52px; margin-bottom: 16px; line-height: 1.1;">FAQ</h1>
+        <p style="font-size: 18px; font-weight: 700; opacity: 0.85; color: var(--brand-teal-dark); max-width: 600px; margin: 0 auto;">Everything you need to know about our residential bin cleaning service.</p>
+      </section>
+
+      <!-- Accordion Grid -->
+      <section class="faq-container">
+        
+        <!-- Q1 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">What areas do you serve?</span>
+            <span class="faq-icon-box">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              We currently clean trash and recycling bins in San Diego's East County, specifically serving <strong>El Cajon</strong>, <strong>La Mesa</strong>, and <strong>Santee</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">How does the bin cleaning service work?</span>
+            <span class="faq-icon-box">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              It is simple! On your scheduled day, leave your empty bins at the curb. When our professional 2-person team arrives, we will first check in to confirm the location of your outdoor faucet/spigot and electrical outlet, while also confirming exactly which bins we will be working on. We then use a high-powered pressure washer to thoroughly clean your bins inside and out, applying specialized sanitizing and deodorizing formulas that kill germs, eliminate bacteria, and leave them smelling fresh. Once finished, we will place the bins back by your garage or front door, knock on your door to show you the results, and collect the payment.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Do I need to be home when you wash the bins?</span>
+            <span class="faq-icon-box">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              It depends on the plan you choose:
+              <br><br>
+              • <strong>Monthly Subscription:</strong> You only need to be home for the <strong>first cleaning</strong> to complete the upfront 6-month block payment. For all subsequent monthly cleanings, you do not need to be home as long as we have access to your outdoor water faucet/spigot and electrical outlet.
+              <br>
+              • <strong>One-Time Clean:</strong> You <strong>must be home</strong> on your scheduled cleaning day, as we collect the payment in person (Cash or Venmo) at the time of service.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">What are your payment terms and options?</span>
+            <span class="faq-icon-box">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              We strictly accept <strong>Cash</strong> or <strong>Venmo</strong> payments. 
+              <br><br>
+              • <strong>Monthly subscriptions</strong> are paid upfront in <strong>6-month blocks</strong> ($60 per bin). All upfront blocks are billed in person at the time of your first service and are strictly non-refundable.
+              <br>
+              • <strong>One-time cleans</strong> are billed in person at <strong>$20 per bin</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Why do you require faucet and outlet access?</span>
+            <span class="faq-icon-box">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              Our professional pressure washing equipment requires a continuous water supply and standard electricity. To perform the service, our 2-person team needs to connect to your outdoor water faucet/spigot and plug into a working outdoor electrical outlet.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">How far in advance do I need to schedule?</span>
+            <span class="faq-icon-box">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              All bookings must be scheduled at least <strong>2 days in the future</strong>. The booking calendar automatically blocks today, tomorrow, and past days. This gives our dispatch team enough time to plan and route our cleaning teams efficiently.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">What happens if it rains on my scheduled washing day?</span>
+            <span class="faq-icon-box">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              If it is raining on your scheduled washing day, we will <strong>not</strong> perform the service. We will contact you immediately to reschedule your cleaning for the next available dry day.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Will I get a confirmation after booking?</span>
+            <span class="faq-icon-box">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              Yes! As soon as you submit your booking request, you will receive an automatic email. Our team will review your requested slot and follow up shortly to confirm your booking date and time.
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Footer Arch + Info -->
+      <div>
+        <svg class="hampy-arch-divider" viewBox="0 0 1440 80" preserveAspectRatio="none" fill="#0A192F">
+          <path d="M0 80 C480 0, 960 0, 1440 80 L1440 80 L0 80 Z"/>
+        </svg>
+        <footer class="hampy-footer-banner">
+          <div style="text-align: center; font-size: 14px; opacity: 0.7;">
+            © 2026 Freshora SD · freshorasd@gmail.com · Serving El Cajon, La Mesa & Santee
+          </div>
+        </footer>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const triggers = document.querySelectorAll('.faq-trigger');
+
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const item = trigger.parentNode;
+          const content = item.querySelector('.faq-content');
+          const isActive = item.classList.contains('active');
+
+          // Close all other open items
+          document.querySelectorAll('.faq-item').forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+              otherItem.querySelector('.faq-content').style.maxHeight = null;
+              otherItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Toggle clicked item
+          if (isActive) {
+            item.classList.remove('active');
+            content.style.maxHeight = null;
+            trigger.setAttribute('aria-expanded', 'false');
+          } else {
+            item.classList.add('active');
+            content.style.maxHeight = content.scrollHeight + 'px';
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    });
+  </script>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

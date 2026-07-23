@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAmbientBubbles();
   initPricingCalculator();
   initBookingPage();
+  initMobileMenu();
 });
 
 window.addEventListener('load', () => {
@@ -416,4 +417,45 @@ function initBookingPage() {
 
   // Initial render
   updateSummary();
+}
+
+function initMobileMenu() {
+  // Create mobile menu overlay container
+  const overlay = document.createElement('div');
+  overlay.id = 'mobileMenu';
+  overlay.className = 'mobile-menu-overlay';
+  overlay.innerHTML = `
+    <button class="mobile-menu-close">✕</button>
+    <div class="mobile-menu-links">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="transformations.html">Transformations</a>
+      <a href="faq.html">FAQ</a>
+      <a href="booking.html" style="background: var(--brand-mint); color: var(--brand-teal-dark); border-radius: 12px; padding: 12px 28px; font-weight: 800; border: 1.5px solid rgba(0, 210, 196, 0.2); font-family: var(--font-sans); font-size: 24px; margin-top: 16px; display: inline-block;">Book Cleaning</a>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  // Capture header right trigger buttons
+  const triggers = document.querySelectorAll('.hampy-header-right a');
+  triggers.forEach(btn => {
+    if (btn.textContent.trim() === '≡') {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        overlay.classList.add('active');
+      });
+    }
+  });
+
+  // Attach close event
+  overlay.querySelector('.mobile-menu-close').addEventListener('click', () => {
+    overlay.classList.remove('active');
+  });
+
+  // Close overlay on clicking any link
+  overlay.querySelectorAll('.mobile-menu-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      overlay.classList.remove('active');
+    });
+  });
 }
