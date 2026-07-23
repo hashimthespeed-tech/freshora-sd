@@ -133,7 +133,7 @@
 
     .logo-main {
       font-family: var(--font-serif);
-      font-size: 38px;
+      font-size: 30px;
       font-weight: 900;
       color: var(--brand-teal-dark);
       letter-spacing: -0.5px;
@@ -142,7 +142,7 @@
 
     .logo-sub {
       font-family: var(--font-sans);
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -155,9 +155,9 @@
       border: 1.5px solid var(--brand-mint);
       color: var(--brand-teal-dark);
       display: inline-block;
-      padding: 6px 18px;
+      padding: 4px 14px;
       border-radius: 30px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.8px;
@@ -173,9 +173,9 @@
     }
 
     .card-desc {
-      font-size: 14px;
+      font-size: 13px;
       color: #475569;
-      line-height: 1.45;
+      line-height: 1.4;
       margin: 0 auto;
       max-width: 290px;
       font-weight: 700;
@@ -295,7 +295,7 @@
       display: block;
     }
 
-    /* Print Overrides */
+    /* Print Overrides (Formats 4 cards on a single sheet of paper in a 2x2 grid) */
     @media print {
       body {
         background: #FFFFFF !important;
@@ -308,22 +308,67 @@
       }
 
       .cards-print-grid {
-        display: block !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr 1fr !important;
+        gap: 15px !important;
+        width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
+        padding: 0.25in !important;
+        box-sizing: border-box !important;
       }
 
       .bin-card {
-        page-break-inside: avoid;
-        margin: 40px auto !important;
-        width: 4in !important;
-        height: 6in !important;
+        page-break-inside: avoid !important;
+        margin: 0 auto !important;
+        width: 3.35in !important;
+        height: 5.0in !important; /* Maintain 3:4 aspect ratio */
         box-shadow: none !important;
-        border: 4px solid var(--brand-mint) !important;
+        border: 3px solid var(--brand-mint) !important;
         background: #FFFFFF !important;
+        padding: 16px 14px !important;
+        border-radius: 20px !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
       }
+
+      /* Scale down card assets for print grid */
+      .bin-card .logo-main { font-size: 24px !important; }
+      .bin-card .logo-sub { font-size: 9px !important; }
+      .bin-card .card-badge { font-size: 9px !important; padding: 3px 10px !important; margin-bottom: 6px !important; }
+      .bin-card .card-title { font-size: 20px !important; margin-bottom: 2px !important; }
+      .bin-card .card-desc { font-size: 11px !important; }
+      .bin-card .card-middle { padding: 8px 12px !important; margin: 8px 0 !important; border-radius: 14px !important; }
+      .bin-card .feature-row { font-size: 11px !important; margin-bottom: 6px !important; gap: 8px !important; }
+      .bin-card .feature-icon { width: 16px !important; height: 16px !important; font-size: 9px !important; }
+      .bin-card .tag-cutout-hint { width: 16px !important; height: 16px !important; margin-bottom: 6px !important; }
+      
+      .bin-card .promo-box { 
+        padding-top: 8px !important; 
+        margin-top: 4px !important;
+        flex-direction: row !important;
+        text-align: left !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+      }
+      .bin-card .promo-left { text-align: left !important; }
+      .bin-card .contact-title { font-size: 8px !important; margin-bottom: 2px !important; }
+      .bin-card .contact-info { font-size: 13px !important; }
+      .bin-card .contact-email { font-size: 11px !important; }
+      .bin-card .promo-right { 
+        width: 50px !important; 
+        height: 50px !important; 
+        padding: 2px !important; 
+        border-radius: 8px !important; 
+        margin: 0 0 0 6px !important; 
+      }
+
+      /* Scale bubbles */
+      .cb-1 { width: 35px !important; height: 35px !important; }
+      .cb-2 { width: 20px !important; height: 20px !important; }
+      .cb-3 { width: 50px !important; height: 50px !important; }
+      .cb-4 { width: 30px !important; height: 30px !important; }
     }
   </style>
 </head>
@@ -336,20 +381,21 @@
   <div class="no-print-header">
     <div>
       <h1>Printable Can Cards & Hangers</h1>
-      <p>Clean layout styled with your brand's colors. Prints two identical cards per sheet.</p>
+      <p>Click print to output a 2x2 grid (4 identical cards) onto a single sheet of paper.</p>
     </div>
     <button class="print-btn" onclick="window.print()">🖨️ Print Marketing Cards</button>
   </div>
 
-  <!-- Cards Grid (Prints 2-up per sheet so you have two promo flyers to cut out) -->
+  <!-- Cards Grid (Prints 4-up in 2x2 layout on a single US Letter page) -->
   <div class="cards-print-grid">
     
-    <!-- CARD 1 (Left Side) -->
+    <!-- CARD 1 -->
     <div class="bin-card">
       <div class="card-bubble cb-1"></div>
       <div class="card-bubble cb-2"></div>
       <div class="card-bubble cb-3"></div>
       <div class="card-bubble cb-4"></div>
+      
       <div class="card-top">
         <span class="tag-cutout-hint"></span>
         <div class="card-logo">
@@ -394,12 +440,115 @@
       </div>
     </div>
 
-    <!-- CARD 2 (Right Side - Identical copy to save paper when printing) -->
+    <!-- CARD 2 -->
     <div class="bin-card">
       <div class="card-bubble cb-1"></div>
       <div class="card-bubble cb-2"></div>
       <div class="card-bubble cb-3"></div>
       <div class="card-bubble cb-4"></div>
+      
+      <div class="card-top">
+        <span class="tag-cutout-hint"></span>
+        <div class="card-logo">
+          <span class="logo-main">freshora</span>
+          <span class="logo-sub">happy bins</span>
+        </div>
+        <span class="card-badge">Smelly Trash Bins?</span>
+        <h2 class="card-title">We Can Help!</h2>
+        <p class="card-desc">Professional pressure washing & sanitizing service right in your neighborhood.</p>
+      </div>
+
+      <div class="card-middle">
+        <div class="feature-row">
+          <span class="feature-icon">✓</span>
+          <span>Pressure wash & grime removal</span>
+        </div>
+        <div class="feature-row">
+          <span class="feature-icon">✓</span>
+          <span>Kills 99.9% of bacteria & odors</span>
+        </div>
+        <div class="feature-row">
+          <span class="feature-icon">✓</span>
+          <span>Removes spiderwebs, dirt & grime</span>
+        </div>
+        <div class="feature-row">
+          <span class="feature-icon">✓</span>
+          <span>Fresh Citrus Deodorized finish</span>
+        </div>
+      </div>
+
+      <div class="card-bottom">
+        <div class="promo-box">
+          <div class="promo-left">
+            <div class="contact-title">Book Online / Contact Us</div>
+            <div class="contact-info">freshorasd.netlify.app</div>
+            <div class="contact-email">freshorasd@gmail.com</div>
+          </div>
+          <div class="promo-right">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://freshorasd.netlify.app" alt="Scan QR Code to Book">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="bin-card">
+      <div class="card-bubble cb-1"></div>
+      <div class="card-bubble cb-2"></div>
+      <div class="card-bubble cb-3"></div>
+      <div class="card-bubble cb-4"></div>
+      
+      <div class="card-top">
+        <span class="tag-cutout-hint"></span>
+        <div class="card-logo">
+          <span class="logo-main">freshora</span>
+          <span class="logo-sub">happy bins</span>
+        </div>
+        <span class="card-badge">Smelly Trash Bins?</span>
+        <h2 class="card-title">We Can Help!</h2>
+        <p class="card-desc">Professional pressure washing & sanitizing service right in your neighborhood.</p>
+      </div>
+
+      <div class="card-middle">
+        <div class="feature-row">
+          <span class="feature-icon">✓</span>
+          <span>Pressure wash & grime removal</span>
+        </div>
+        <div class="feature-row">
+          <span class="feature-icon">✓</span>
+          <span>Kills 99.9% of bacteria & odors</span>
+        </div>
+        <div class="feature-row">
+          <span class="feature-icon">✓</span>
+          <span>Removes spiderwebs, dirt & grime</span>
+        </div>
+        <div class="feature-row">
+          <span class="feature-icon">✓</span>
+          <span>Fresh Citrus Deodorized finish</span>
+        </div>
+      </div>
+
+      <div class="card-bottom">
+        <div class="promo-box">
+          <div class="promo-left">
+            <div class="contact-title">Book Online / Contact Us</div>
+            <div class="contact-info">freshorasd.netlify.app</div>
+            <div class="contact-email">freshorasd@gmail.com</div>
+          </div>
+          <div class="promo-right">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://freshorasd.netlify.app" alt="Scan QR Code to Book">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="bin-card">
+      <div class="card-bubble cb-1"></div>
+      <div class="card-bubble cb-2"></div>
+      <div class="card-bubble cb-3"></div>
+      <div class="card-bubble cb-4"></div>
+      
       <div class="card-top">
         <span class="tag-cutout-hint"></span>
         <div class="card-logo">
