@@ -151,16 +151,17 @@
     }
 
     .card-bin-image-wrapper {
-      width: 70px;
-      height: 70px;
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      border: 3px solid var(--brand-mint);
+      border: 2px solid var(--brand-mint);
       overflow: hidden;
-      margin: 4px auto 10px;
       background: #FFFFFF;
       box-shadow: 0 4px 10px rgba(0, 210, 196, 0.15);
-      position: relative;
-      z-index: 5;
+      z-index: 10;
     }
 
     .card-bin-image {
@@ -377,10 +378,11 @@
       .bin-card .logo-main { font-size: 24px !important; }
       .bin-card .logo-sub { font-size: 9px !important; }
       .bin-card .card-bin-image-wrapper { 
-        width: 45px !important; 
-        height: 45px !important; 
-        margin-bottom: 6px !important;
-        border-width: 2px !important;
+        width: 38px !important; 
+        height: 38px !important; 
+        top: 12px !important;
+        right: 12px !important;
+        border-width: 1.5px !important;
       }
       .bin-card .card-badge { font-size: 9px !important; padding: 3px 10px !important; margin-bottom: 6px !important; }
       .bin-card .card-title { font-size: 20px !important; margin-bottom: 2px !important; }
