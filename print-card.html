@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freshora Print Cards Template</title>
+  <title>Freshora Marketing Card Template</title>
   
   <link rel="stylesheet" href="styles/main.css">
   <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
@@ -30,7 +30,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 16px;
-      border: 1.5px solid rgba(0, 210, 196, 0.1);
+      border: 1.5px solid rgba(0, 210, 196, 0.15);
       position: relative;
       z-index: 100;
     }
@@ -78,7 +78,7 @@
       z-index: 10;
     }
 
-    /* Print Card Canvas (Matches exact website card theme & style) */
+    /* Print Card Canvas (Teal Accent Card Design) */
     .bin-card {
       background: #FFFFFF;
       color: var(--brand-teal-dark);
@@ -93,13 +93,25 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      border: 2px solid rgba(0, 210, 196, 0.15);
+      border: 4px solid var(--brand-mint); /* Thicker teal border */
       transition: var(--transition);
     }
 
     .bin-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(5, 38, 34, 0.08);
+      box-shadow: 0 20px 40px rgba(0, 210, 196, 0.12);
+    }
+
+    /* Ambient card corner teal bubbles */
+    .bin-card::before {
+      content: "";
+      position: absolute;
+      top: -10%;
+      right: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(0, 210, 196, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
     .card-top {
@@ -130,8 +142,7 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--brand-teal-dark);
-      opacity: 0.7;
+      color: var(--brand-mint); /* Teal logo subtitle */
       margin-top: 4px;
     }
 
@@ -169,8 +180,8 @@
     .card-middle {
       position: relative;
       z-index: 5;
-      background: #FDFBF7;
-      border: 1.5px solid rgba(0, 210, 196, 0.12);
+      background: rgba(0, 210, 196, 0.05); /* Light teal tint background */
+      border: 1.5px solid rgba(0, 210, 196, 0.2);
       border-radius: 20px;
       padding: 20px;
       margin: 20px 0;
@@ -211,7 +222,7 @@
     }
 
     .promo-box {
-      border-top: 1.5px dashed rgba(0, 210, 196, 0.25);
+      border-top: 1.5px dashed rgba(0, 210, 196, 0.3);
       padding-top: 20px;
       margin-top: 10px;
     }
@@ -226,24 +237,26 @@
     }
 
     .contact-info {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 900;
       color: var(--brand-teal-dark);
       margin: 2px 0;
     }
 
     .contact-email {
-      font-size: 15px;
-      font-weight: 800;
+      font-size: 16px;
+      font-weight: 900;
       color: var(--brand-teal-dark);
-      opacity: 0.85;
+      opacity: 0.95;
       text-decoration: underline;
+      display: block;
+      margin-top: 4px;
     }
 
     .tag-cutout-hint {
       width: 24px;
       height: 24px;
-      border: 2px dashed rgba(5, 38, 34, 0.2);
+      border: 2px dashed rgba(0, 210, 196, 0.4);
       border-radius: 50%;
       margin: 0 auto 16px;
       display: block;
@@ -273,7 +286,7 @@
         width: 4in !important;
         height: 6in !important;
         box-shadow: none !important;
-        border: 2px solid rgba(0, 210, 196, 0.4) !important;
+        border: 4px solid var(--brand-mint) !important;
         background: #FFFFFF !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
@@ -290,15 +303,15 @@
   <div class="no-print-header">
     <div>
       <h1>Printable Can Cards & Hangers</h1>
-      <p>Formatted in the exact colors and styles of the Freshora SD website.</p>
+      <p>Clean layout styled with your brand's colors. Prints two identical cards per sheet.</p>
     </div>
     <button class="print-btn" onclick="window.print()">🖨️ Print Marketing Cards</button>
   </div>
 
-  <!-- Cards Grid -->
+  <!-- Cards Grid (Prints 2-up per sheet so you have two promo flyers to cut out) -->
   <div class="cards-print-grid">
     
-    <!-- CARD 1: Customer Acquisition Hanger (Promo card) -->
+    <!-- CARD 1 (Left Side) -->
     <div class="bin-card">
       <div class="card-top">
         <span class="tag-cutout-hint"></span>
@@ -339,37 +352,41 @@
       </div>
     </div>
 
-    <!-- CARD 2: Service Confirmation Hanger (Completed service card) -->
-    <div class="bin-card" style="border-color: var(--brand-mint);">
+    <!-- CARD 2 (Right Side - Identical copy to save paper when printing) -->
+    <div class="bin-card">
       <div class="card-top">
         <span class="tag-cutout-hint"></span>
         <div class="card-logo">
           <span class="logo-main">freshora</span>
           <span class="logo-sub">happy bins</span>
         </div>
-        <span class="card-badge" style="background: var(--brand-mint); color: var(--brand-teal-dark);">Clean Confirmation</span>
-        <h2 class="card-title">Your Bins Are Fresh!</h2>
-        <p class="card-desc">Our 2-person pressure washing team visited your property today and sanitized your bins.</p>
+        <span class="card-badge">Smelly Trash Bins?</span>
+        <h2 class="card-title">We Can Help!</h2>
+        <p class="card-desc">Professional pressure washing & sanitizing service right in your neighborhood.</p>
       </div>
 
       <div class="card-middle">
         <div class="feature-row">
-          <span class="feature-icon">★</span>
-          <span>Washed, scrubbed, & rinsed clean</span>
+          <span class="feature-icon">✓</span>
+          <span>Pressure wash & grime removal</span>
         </div>
         <div class="feature-row">
-          <span class="feature-icon">★</span>
-          <span>Disinfected & deodorized</span>
+          <span class="feature-icon">✓</span>
+          <span>Kills 99.9% of bacteria & odors</span>
         </div>
         <div class="feature-row">
-          <span class="feature-icon">★</span>
-          <span>Pest & fly repellent applied</span>
+          <span class="feature-icon">✓</span>
+          <span>Deters flies, maggots & pests</span>
+        </div>
+        <div class="feature-row">
+          <span class="feature-icon">✓</span>
+          <span>Fresh Citrus Deodorized finish</span>
         </div>
       </div>
 
       <div class="card-bottom">
         <div class="promo-box">
-          <div class="contact-title">Need Another Wash?</div>
+          <div class="contact-title">Book Online / Contact Us</div>
           <div class="contact-info">fresorasd.com</div>
           <div class="contact-email">fresorasd@gmail.com</div>
         </div>
