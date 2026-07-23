@@ -150,6 +150,26 @@
       margin-top: 4px;
     }
 
+    .card-bin-image-wrapper {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 3px solid var(--brand-mint);
+      overflow: hidden;
+      margin: 4px auto 10px;
+      background: #FFFFFF;
+      box-shadow: 0 4px 10px rgba(0, 210, 196, 0.15);
+      position: relative;
+      z-index: 5;
+    }
+
+    .card-bin-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .card-badge {
       background: rgba(0, 210, 196, 0.1);
       border: 1.5px solid var(--brand-mint);
@@ -356,6 +376,12 @@
       /* Scale down card assets for print grid */
       .bin-card .logo-main { font-size: 24px !important; }
       .bin-card .logo-sub { font-size: 9px !important; }
+      .bin-card .card-bin-image-wrapper { 
+        width: 45px !important; 
+        height: 45px !important; 
+        margin-bottom: 6px !important;
+        border-width: 2px !important;
+      }
       .bin-card .card-badge { font-size: 9px !important; padding: 3px 10px !important; margin-bottom: 6px !important; }
       .bin-card .card-title { font-size: 20px !important; margin-bottom: 2px !important; }
       .bin-card .card-desc { font-size: 11px !important; }
@@ -423,6 +449,9 @@
           <span class="logo-main">freshora</span>
           <span class="logo-sub">happy bins</span>
         </div>
+        <div class="card-bin-image-wrapper">
+          <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin" class="card-bin-image">
+        </div>
         <span class="card-badge">Smelly Trash Bins?</span>
         <h2 class="card-title">We Can Help!</h2>
         <p class="card-desc">Professional pressure washing & sanitizing service right in your neighborhood.</p>
@@ -474,6 +503,9 @@
         <div class="card-logo">
           <span class="logo-main">freshora</span>
           <span class="logo-sub">happy bins</span>
+        </div>
+        <div class="card-bin-image-wrapper">
+          <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin" class="card-bin-image">
         </div>
         <span class="card-badge">Smelly Trash Bins?</span>
         <h2 class="card-title">We Can Help!</h2>
@@ -527,6 +559,9 @@
           <span class="logo-main">freshora</span>
           <span class="logo-sub">happy bins</span>
         </div>
+        <div class="card-bin-image-wrapper">
+          <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin" class="card-bin-image">
+        </div>
         <span class="card-badge">Smelly Trash Bins?</span>
         <h2 class="card-title">We Can Help!</h2>
         <p class="card-desc">Professional pressure washing & sanitizing service right in your neighborhood.</p>
@@ -578,6 +613,9 @@
         <div class="card-logo">
           <span class="logo-main">freshora</span>
           <span class="logo-sub">happy bins</span>
+        </div>
+        <div class="card-bin-image-wrapper">
+          <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin" class="card-bin-image">
         </div>
         <span class="card-badge">Smelly Trash Bins?</span>
         <h2 class="card-title">We Can Help!</h2>
