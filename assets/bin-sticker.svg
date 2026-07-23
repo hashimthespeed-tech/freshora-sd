@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1200" width="1800" height="1200" fill="none">
+  <defs>
+    <linearGradient id="stickerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#0F2137"/>
+    </linearGradient>
+    <linearGradient id="aquaTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Heavy Duty Vinyl Cut Border -->
+  <rect width="1800" height="1200" rx="80" fill="url(#stickerBg)"/>
+  <rect x="24" y="24" width="1752" height="1152" rx="60" stroke="url(#aquaTeal)" stroke-width="12"/>
+
+  <!-- Left Side: Brand Seal & Messaging -->
+  <g transform="translate(120, 140)">
+    <!-- Logo Badge -->
+    <rect x="0" y="0" width="220" height="220" rx="55" fill="#0A192F" stroke="url(#aquaTeal)" stroke-width="6"/>
+    <path d="M72 90 L80 162 C80.5 169 87 175 94 175 C110 175 126 175 132 175 C139 175 145.5 169 146 162 L154 90 Z" fill="#0A192F" stroke="url(#aquaTeal)" stroke-width="6"/>
+    <path d="M54 75 C54 71 58 67 63 67 L163 67 C168 67 172 71 172 75 L172 87 L54 87 Z" fill="url(#aquaTeal)"/>
+    <path d="M42 128 C70 104 88 146 116 118 C135 99 157 114 176 101" stroke="#38BDF8" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <path d="M154 44 L158 55 L169 60 L158 65 L154 76 L150 65 L139 60 L150 55 Z" fill="#00E5FF"/>
+
+    <text x="260" y="110" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="94" fill="#FFFFFF" letter-spacing="-2">
+      FRESH<tspan fill="#00E5FF">ORA</tspan>
+    </text>
+    <rect x="910" y="32" width="100" height="60" rx="16" fill="#00E5FF"/>
+    <text x="960" y="74" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="34" fill="#0A192F" text-anchor="middle">SD</text>
+
+    <text x="265" y="175" font-family="'Inter', sans-serif" font-weight="800" font-size="36" letter-spacing="5" fill="#00E5FF">
+      CLEANED & SANITIZED BIN
+    </text>
+
+    <!-- Main Headline Callout -->
+    <text x="0" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="64" fill="#FFFFFF">
+      NEVER DREAD TRASH DAY AGAIN.
+    </text>
+    
+    <text x="0" y="440" font-family="'Inter', sans-serif" font-weight="700" font-size="40" fill="#94A3B8">
+      Every month we swing by and clean your bin!
+    </text>
+
+    <!-- Specs List -->
+    <g transform="translate(0, 520)">
+      <rect width="900" height="120" rx="24" fill="#00E5FF" fill-opacity="0.1" stroke="#00E5FF" stroke-width="3"/>
+      <text x="40" y="74" font-family="'Inter', sans-serif" font-weight="800" font-size="32" fill="#00E5FF">
+        ✓ 200° Hot Water  ·  ✓ Eco Sanitized  ·  ✓ 100% Deodorized
+      </text>
+    </g>
+
+    <text x="0" y="750" font-family="'Inter', sans-serif" font-weight="700" font-size="34" fill="#94A3B8">
+      📍 El Cajon · La Mesa · Santee  |  ✉️ freshorasd@gmail.com
+    </text>
+  </g>
+
+  <!-- Right Side: White QR Sticker Callout -->
+  <g transform="translate(1220, 160)">
+    <rect width="460" height="880" rx="44" fill="#FFFFFF"/>
+    
+    <text x="230" y="95" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="40" fill="#0A192F" text-anchor="middle">
+      WANT YOUR BINS
+    </text>
+    <text x="230" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="44" fill="#0D9488" text-anchor="middle">
+      THIS CLEAN?
+    </text>
+
+    <!-- Vector QR Code -->
+    <g transform="translate(55, 190)">
+      <rect width="350" height="350" fill="#FFFFFF"/>
+      <rect x="10" y="10" width="90" height="90" rx="14" fill="#0A192F"/>
+      <rect x="28" y="28" width="54" height="54" rx="8" fill="#FFFFFF"/>
+      <rect x="42" y="42" width="26" height="26" rx="4" fill="#00E5FF"/>
+
+      <rect x="250" y="10" width="90" height="90" rx="14" fill="#0A192F"/>
+      <rect x="268" y="28" width="54" height="54" rx="8" fill="#FFFFFF"/>
+      <rect x="282" y="42" width="26" height="26" rx="4" fill="#00E5FF"/>
+
+      <rect x="10" y="250" width="90" height="90" rx="14" fill="#0A192F"/>
+      <rect x="28" y="268" width="54" height="54" rx="8" fill="#FFFFFF"/>
+      <rect x="42" y="282" width="26" height="26" rx="4" fill="#00E5FF"/>
+
+      <!-- Data Blocks -->
+      <g fill="#0A192F">
+        <rect x="125" y="15" width="25" height="25" rx="4"/>
+        <rect x="165" y="15" width="55" height="25" rx="4"/>
+        <rect x="120" y="55" width="35" height="35" rx="4"/>
+        <rect x="180" y="55" width="40" height="25" rx="4"/>
+        <rect x="130" y="105" width="80" height="25" rx="4"/>
+        <rect x="15" y="125" width="65" height="25" rx="4"/>
+        <rect x="95" y="125" width="25" height="45" rx="4"/>
+        <!-- Center Logo Overlay -->
+        <rect x="135" y="135" width="80" height="80" rx="18" fill="#00E5FF"/>
+        <rect x="147" y="147" width="56" height="56" rx="14" fill="#0A192F"/>
+        <path d="M166 163 L169 187 L181 187 L184 163 Z" stroke="#00E5FF" stroke-width="3" fill="none"/>
+        <path d="M162 157 L188 157" stroke="#00E5FF" stroke-width="3"/>
+        <rect x="235" y="125" width="50" height="25" rx="4"/>
+        <rect x="295" y="125" width="35" height="35" rx="4"/>
+        <rect x="15" y="165" width="45" height="40" rx="4"/>
+        <rect x="75" y="185" width="45" height="25" rx="4"/>
+        <rect x="235" y="165" width="60" height="30" rx="4"/>
+        <rect x="120" y="235" width="40" height="40" rx="4"/>
+        <rect x="175" y="235" width="65" height="25" rx="4"/>
+        <rect x="255" y="225" width="35" height="50" rx="4"/>
+        <rect x="120" y="285" width="60" height="30" rx="4"/>
+        <rect x="195" y="280" width="50" height="50" rx="4"/>
+        <rect x="260" y="290" width="60" height="30" rx="4"/>
+      </g>
+    </g>
+
+    <text x="230" y="600" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="36" fill="#0A192F" text-anchor="middle">
+      SCAN TO BOOK
+    </text>
+    <text x="230" y="645" font-family="'Inter', sans-serif" font-weight="800" font-size="28" fill="#00E5FF" text-anchor="middle">
+      $10 / MONTH
+    </text>
+    <text x="230" y="690" font-family="'Inter', sans-serif" font-weight="600" font-size="24" fill="#64748B" text-anchor="middle">
+      FreshoraSD.com
+    </text>
+
+    <rect x="55" y="745" width="350" height="80" rx="20" fill="#0A192F"/>
+    <text x="230" y="795" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="26" fill="#FFFFFF" text-anchor="middle">
+      BOOK IN 60 SECONDS
+    </text>
+  </g>
+</svg>

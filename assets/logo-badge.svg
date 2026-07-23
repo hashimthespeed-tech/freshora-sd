@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <defs>
+    <linearGradient id="primaryNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="aquaTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="50%" stop-color="#00D2C4"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+    <path id="textArcTop" d="M 30,100 A 70,70 0 1,1 170,100" />
+    <path id="textArcBottom" d="M 170,100 A 70,70 0 0,1 30,100" />
+  </defs>
+
+  <!-- Outer Ring -->
+  <circle cx="100" cy="100" r="96" fill="url(#primaryNavy)" stroke="url(#aquaTeal)" stroke-width="4"/>
+  <circle cx="100" cy="100" r="84" stroke="#00E5FF" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+
+  <!-- Curved Text Top -->
+  <text font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" fill="#FFFFFF" letter-spacing="3" text-anchor="middle">
+    <textPath href="#textArcTop" startOffset="50%">FRESHORA SD</textPath>
+  </text>
+
+  <!-- Curved Text Bottom -->
+  <text font-family="'Inter', sans-serif" font-weight="700" font-size="11" fill="#00E5FF" letter-spacing="2" text-anchor="middle">
+    <textPath href="#textArcBottom" startOffset="50%">TRASH DAY, UPGRADED</textPath>
+  </text>
+
+  <!-- Center Icon Group -->
+  <g transform="translate(50, 50) scale(1)">
+    <!-- Bin Icon Base -->
+    <path d="M34 42 L38 74 C38.5 77.5 41.5 80 45 80 L55 80 C58.5 80 61.5 77.5 62 74 L66 42 Z" fill="#0A192F" stroke="url(#aquaTeal)" stroke-width="3" stroke-linejoin="round"/>
+    <!-- Bin Lid -->
+    <path d="M28 36 C28 34.5 29.5 33 31 33 L69 33 C70.5 33 72 34.5 72 36 L72 40 C72 41 71 42 70 42 L30 42 C29 42 28 41 28 40 Z" fill="url(#aquaTeal)"/>
+    <!-- Lid Handle -->
+    <path d="M43 30 C43 28.5 44.5 27 46 27 L54 27 C55.5 27 57 28.5 57 30 L57 33 L43 33 Z" fill="url(#aquaTeal)"/>
+    <!-- Water Wave -->
+    <path d="M22 60 C34 48 42 68 54 54 C62 45 72 52 80 46" stroke="#38BDF8" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <!-- Sparkle Stars -->
+    <path d="M68 20 L70 25 L75 27 L70 29 L68 34 L66 29 L61 27 L66 25 Z" fill="#00E5FF"/>
+  </g>
+
+  <!-- Star Dividers -->
+  <polygon points="26,100 28,96 32,96 29,102 30,106 26,103 22,106 23,102 20,96 24,96" fill="#00E5FF" transform="scale(0.8) translate(8, 25)"/>
+  <polygon points="174,100 176,96 180,96 177,102 178,106 174,103 170,106 171,102 168,96 172,96" fill="#00E5FF" transform="scale(0.8) translate(30, 25)"/>
+</svg>

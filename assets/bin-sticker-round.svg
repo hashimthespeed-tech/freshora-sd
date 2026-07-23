@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200" fill="none">
+  <defs>
+    <linearGradient id="roundBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#0F2137"/>
+    </linearGradient>
+    <linearGradient id="aquaTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Cut Circle -->
+  <circle cx="600" cy="600" r="580" fill="url(#roundBg)" stroke="url(#aquaTeal)" stroke-width="16"/>
+  <circle cx="600" cy="600" r="540" stroke="#00E5FF" stroke-width="3" stroke-dasharray="16 16" opacity="0.6"/>
+
+  <!-- Curved Top Text -->
+  <path id="circleTextTop" d="M 120,600 A 480,480 0 1,1 1080,600" fill="none"/>
+  <text font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="52" fill="#FFFFFF" letter-spacing="8" text-anchor="middle">
+    <textPath href="#circleTextTop" startOffset="50%">CLEANED BY FRESHORA SD</textPath>
+  </text>
+
+  <!-- Curved Bottom Text -->
+  <path id="circleTextBottom" d="M 1080,600 A 480,480 0 0,1 120,600" fill="none"/>
+  <text font-family="'Inter', sans-serif" font-weight="800" font-size="44" fill="#00E5FF" letter-spacing="6" text-anchor="middle">
+    <textPath href="#circleTextBottom" startOffset="50%">SCAN TO UPGRADE YOUR BINS</textPath>
+  </text>
+
+  <!-- Center White QR Circle Badge -->
+  <circle cx="600" cy="600" r="320" fill="#FFFFFF" stroke="url(#aquaTeal)" stroke-width="8"/>
+
+  <!-- Vector QR Code Center -->
+  <g transform="translate(435, 435)">
+    <rect width="330" height="330" fill="#FFFFFF"/>
+    <rect x="10" y="10" width="85" height="85" rx="14" fill="#0A192F"/>
+    <rect x="27" y="27" width="51" height="51" rx="8" fill="#FFFFFF"/>
+    <rect x="40" y="40" width="25" height="25" rx="4" fill="#00E5FF"/>
+
+    <rect x="235" y="10" width="85" height="85" rx="14" fill="#0A192F"/>
+    <rect x="252" y="27" width="51" height="51" rx="8" fill="#FFFFFF"/>
+    <rect x="265" y="40" width="25" height="25" rx="4" fill="#00E5FF"/>
+
+    <rect x="10" y="235" width="85" height="85" rx="14" fill="#0A192F"/>
+    <rect x="27" y="252" width="51" height="51" rx="8" fill="#FFFFFF"/>
+    <rect x="40" y="265" width="25" height="25" rx="4" fill="#00E5FF"/>
+
+    <g fill="#0A192F">
+      <rect x="115" y="15" width="25" height="25" rx="4"/>
+      <rect x="155" y="15" width="50" height="25" rx="4"/>
+      <rect x="110" y="50" width="35" height="35" rx="4"/>
+      <rect x="170" y="50" width="40" height="25" rx="4"/>
+      <rect x="120" y="95" width="75" height="25" rx="4"/>
+      <rect x="15" y="115" width="60" height="25" rx="4"/>
+      <rect x="90" y="115" width="25" height="40" rx="4"/>
+      <!-- Center Logo -->
+      <rect x="125" y="125" width="80" height="80" rx="18" fill="#00E5FF"/>
+      <rect x="137" y="137" width="56" height="56" rx="14" fill="#0A192F"/>
+      <path d="M156 153 L159 177 L171 177 L174 153 Z" stroke="#00E5FF" stroke-width="3" fill="none"/>
+      <path d="M152 147 L178 147" stroke="#00E5FF" stroke-width="3"/>
+      <rect x="220" y="115" width="45" height="25" rx="4"/>
+      <rect x="280" y="115" width="35" height="35" rx="4"/>
+      <rect x="15" y="155" width="40" height="35" rx="4"/>
+      <rect x="70" y="175" width="40" height="25" rx="4"/>
+      <rect x="220" y="155" width="55" height="30" rx="4"/>
+      <rect x="110" y="220" width="35" height="35" rx="4"/>
+      <rect x="160" y="220" width="60" height="25" rx="4"/>
+      <rect x="240" y="210" width="35" height="45" rx="4"/>
+      <rect x="110" y="270" width="55" height="30" rx="4"/>
+      <rect x="180" y="265" width="45" height="45" rx="4"/>
+      <rect x="245" y="275" width="55" height="30" rx="4"/>
+    </g>
+  </g>
+
+  <!-- Left & Right Stars -->
+  <polygon points="180,600 195,570 230,570 205,615 215,645 180,622 145,645 155,615 130,570 165,570" fill="#00E5FF"/>
+  <polygon points="1020,600 1035,570 1070,570 1045,615 1055,645 1020,622 985,645 995,615 970,570 1005,570" fill="#00E5FF"/>
+</svg>

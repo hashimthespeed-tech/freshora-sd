@@ -1,0 +1,30 @@
+/* ==========================================================================
+   FRESHORA SD — HIGH-RESOLUTION PRINT STYLESHEET
+   ========================================================================== */
+
+@media print {
+  body {
+    background: #FFF !important;
+    color: #000 !important;
+  }
+  
+  .site-header, .site-footer, .hero-section, .ick-section, .pricing-section, .view-mode-toggle, .asset-tab-bar, .no-print {
+    display: none !important;
+  }
+
+  .print-page-break {
+    page-break-after: always;
+  }
+
+  .print-asset-preview-card {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .asset-frame svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}

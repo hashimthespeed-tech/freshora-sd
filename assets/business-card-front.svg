@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" width="1050" height="600" fill="none">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A192F"/>
+      <stop offset="60%" stop-color="#0F2137"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="aquaTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1050" height="600" fill="url(#cardBg)"/>
+  
+  <!-- Subtle Grid Lines / Water Accent lines -->
+  <path d="M-100 600 C 300 450, 600 650, 1150 400" stroke="#00E5FF" stroke-width="2" opacity="0.15" fill="none"/>
+  <path d="M-100 500 C 400 350, 700 550, 1150 300" stroke="#38BDF8" stroke-width="1.5" opacity="0.1" fill="none"/>
+
+  <!-- Top Accent Bar -->
+  <rect width="1050" height="12" fill="url(#aquaTeal)"/>
+
+  <!-- Main Logo & Brand -->
+  <g transform="translate(100, 160)">
+    <!-- Bin Shield Icon -->
+    <rect x="0" y="0" width="120" height="120" rx="30" fill="#0A192F" stroke="url(#aquaTeal)" stroke-width="3.5"/>
+    <path d="M38 50 L43 90 C43.5 94 47 97 51 97 L69 97 C73 97 76.5 94 77 90 L82 50 Z" fill="#0A192F" stroke="url(#aquaTeal)" stroke-width="4"/>
+    <path d="M30 42 C30 40 32 38 34 38 L86 38 C88 38 90 40 90 42 L90 48 L30 48 Z" fill="url(#aquaTeal)"/>
+    <path d="M48 34 C48 32 50 30 52 30 L68 30 C70 30 72 32 72 34 L72 38 L48 38 Z" fill="url(#aquaTeal)"/>
+    <path d="M22 72 C38 58 48 82 64 66 C74 55 86 64 96 56" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M84 24 L86 30 L92 32 L86 34 L84 40 L82 34 L76 32 L82 30 Z" fill="#00E5FF"/>
+
+    <!-- Brand Name Typography -->
+    <text x="160" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="64" letter-spacing="-1" fill="#FFFFFF">
+      FRESH<tspan fill="#00E5FF">ORA</tspan>
+    </text>
+    
+    <rect x="520" y="32" width="70" height="40" rx="10" fill="#00E5FF"/>
+    <text x="555" y="58" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="20" fill="#0A192F" text-anchor="middle">SD</text>
+
+    <text x="162" y="115" font-family="'Inter', sans-serif" font-weight="700" font-size="22" letter-spacing="4" fill="#94A3B8">
+      RESIDENTIAL TRASH BIN CLEANING
+    </text>
+  </g>
+
+  <!-- Tagline Teaser -->
+  <text x="100" y="380" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="32" fill="#FFFFFF">
+    Never dread trash day again.
+  </text>
+  
+  <text x="100" y="425" font-family="'Inter', sans-serif" font-weight="500" font-size="22" fill="#00E5FF">
+    No smell. No slime. No dread. Fresh bins, zero ick.
+  </text>
+
+  <!-- Bottom Details Bar -->
+  <rect x="100" y="480" width="850" height="2" fill="#334155"/>
+
+  <text x="100" y="525" font-family="'Inter', sans-serif" font-weight="600" font-size="20" fill="#94A3B8">
+    SERVING: EL CAJON · LA MESA · SANTEE
+  </text>
+
+  <text x="950" y="525" font-family="'Inter', sans-serif" font-weight="700" font-size="22" fill="#00E5FF" text-anchor="end">
+    freshorasd@gmail.com
+  </text>
+</svg>

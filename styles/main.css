@@ -1,0 +1,1236 @@
+/* ==========================================================================
+   FRESHORA SD — 100% CENTERED CARDS WITH OVERFLOWING SVG POINTER LINES
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,800;0,9..144,900;1,9..144,800;1,9..144,900&family=Quicksand:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Refreshing Multi-Tone Cleanliness Palette */
+  --bg-hero: #00D2C4;         /* Fresh Electric Aqua Teal */
+  --bg-intro: #02C8BC;        /* Subtly shifted cleaner mid-teal */
+  --bg-steps: #00D2C4;        /* Pure bright teal */
+  --bg-pricing: #00C6BA;      /* Subtly shifted deeper mint teal */
+  --bg-reviews: #00D7CB;      /* Subtly shifted lighter crystal teal */
+  --bg-footer: #0A192F;       /* Deep Royal Midnight Navy Arch Footer */
+
+  --text-dark: #052622;       /* Deepest contrast text */
+  --text-body: #052622;       /* Contrast text for body elements on teal */
+
+  --brand-mint: #00D2C4;
+  --brand-cyan: #00E5FF;
+  --brand-teal-dark: #052622;
+  --brand-gold: #FFC72C;
+
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* Typography */
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Quicksand', 'Inter', sans-serif;
+
+  --radius-card: 32px;
+  --radius-pill: 60px;
+  --transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  --shadow-card: 0 18px 45px rgba(5, 38, 34, 0.08);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--bg-hero);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   FLOATING SOAP BUBBLES & WATER REFLECTION PATTERNS
+   ========================================================================== */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.35) 40%, rgba(0, 229, 255, 0.3) 70%, rgba(255, 255, 255, 0.8) 100%);
+  box-shadow: inset 0 0 16px rgba(255, 255, 255, 0.9), 0 10px 30px rgba(0, 229, 255, 0.25);
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+  z-index: 2;
+  animation: floatBubble 7s ease-in-out infinite alternate;
+}
+
+.bubble-1 { width: 170px; height: 170px; top: 8%; right: 12%; animation-duration: 7s; }
+.bubble-2 { width: 110px; height: 110px; top: 58%; right: 36%; animation-duration: 5s; animation-delay: 1s; }
+.bubble-3 { width: 210px; height: 210px; bottom: 4%; right: 4%; animation-duration: 8s; animation-delay: 0.5s; }
+
+.bubble-4 { width: 140px; height: 140px; top: 15%; left: 6%; animation-duration: 6.5s; }
+.bubble-5 { width: 180px; height: 180px; bottom: 10%; right: 8%; animation-duration: 9s; animation-delay: 1.5s; }
+
+.bubble-6 { width: 130px; height: 130px; top: 25%; right: 10%; animation-duration: 7.5s; }
+.bubble-7 { width: 160px; height: 160px; bottom: 18%; left: 5%; animation-duration: 8.5s; animation-delay: 0.8s; }
+
+.bubble-8 { width: 190px; height: 190px; top: 12%; left: 8%; animation-duration: 8s; }
+.bubble-9 { width: 120px; height: 120px; bottom: 15%; right: 12%; animation-duration: 6s; animation-delay: 1.2s; }
+
+@keyframes floatBubble {
+  0% { transform: translateY(0px) scale(1) rotate(0deg); }
+  100% { transform: translateY(-28px) scale(1.06) rotate(12deg); }
+}
+
+@keyframes floatStormBubble {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.7);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-60vh) translateX(70px) scale(1.1);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-130vh) translateX(-70px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Scroll-Driven Soap Bubble Stream (Rises Up as User Scrolls Down) */
+.scroll-bubble-stream {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.scroll-bubble {
+  position: absolute;
+  bottom: -200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.4) 40%, rgba(0, 229, 255, 0.45) 75%, rgba(255, 255, 255, 0.9) 100%);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.95), 0 12px 35px rgba(0, 229, 255, 0.3);
+  backdrop-filter: blur(2px);
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.hampy-header {
+  padding: 36px 0 20px;
+  position: relative;
+  z-index: 100;
+}
+
+.hampy-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hampy-logo {
+  text-decoration: none;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+.hampy-logo-title {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 0.85;
+  letter-spacing: -2px;
+}
+
+.hampy-logo-sub {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+/* Floating White Capsule Menu */
+.hampy-nav-capsule {
+  background: var(--color-white);
+  padding: 16px 54px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  box-shadow: 0 12px 35px rgba(5, 38, 34, 0.08);
+}
+
+.hampy-nav-link {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 20px;
+  color: #1E293B;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.hampy-nav-link:hover, .hampy-nav-link.active {
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+/* Right Floating Circle Buttons */
+.hampy-header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hampy-circle-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 22px;
+  color: #000000;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(5, 38, 34, 0.08);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.hampy-circle-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-wrapper {
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 70px;
+}
+
+.hampy-hero {
+  padding: 40px 0 80px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hampy-hero-title {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: clamp(72px, 8vw, 115px);
+  line-height: 0.9;
+  color: var(--text-dark);
+  letter-spacing: -3px;
+  margin-bottom: 48px;
+}
+
+.hampy-hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hampy-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  background: #000000;
+  color: #FFFFFF;
+  padding: 22px 42px;
+  border-radius: var(--radius-pill);
+  border: none;
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+  transition: var(--transition);
+  width: fit-content;
+}
+
+.hampy-hero-cta:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: var(--brand-teal-dark);
+  box-shadow: 0 24px 50px rgba(0,0,0,0.35);
+}
+
+.hampy-cta-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand-mint);
+  color: var(--brand-teal-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.hampy-trust-pills {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hampy-trust-pill {
+  background: #FFFFFF;
+  color: var(--brand-teal-dark);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  border: 1.5px solid rgba(255,255,255,0.8);
+}
+
+.hampy-hero-photo-box {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+  border: 5px solid #FFFFFF;
+  max-height: 560px;
+}
+
+.hampy-hero-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   SECTION 2: INTRO — 100% CENTERED CARDS WITH OVERFLOWING SVG POINTER LINES
+   ========================================================================== */
+.intro-wrapper {
+  background-color: rgba(5, 38, 34, 0.03);
+  position: relative;
+  padding: 120px 0 160px;
+  overflow: hidden;
+}
+
+.hampy-intro-header-block {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+  position: relative;
+  z-index: 10;
+}
+
+.hampy-intro-heading {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: clamp(56px, 7vw, 92px);
+  line-height: 1.02;
+  color: var(--brand-teal-dark);
+  letter-spacing: -2px;
+}
+
+.hampy-sweeping-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  position: relative;
+  z-index: 10;
+}
+
+.hampy-centered-card-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 0;
+  
+  /* Scroll Entrance Initial State */
+  opacity: 0;
+  transform: scale(0.94) translateY(60px);
+  transition: opacity 1.1s cubic-bezier(0.1, 0.8, 0.25, 1), transform 1.1s cubic-bezier(0.1, 0.8, 0.25, 1);
+}
+
+.hampy-centered-card-wrapper.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.hampy-media-card {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: visible !important; /* Allow callout badges and SVG to render outside */
+  box-shadow: var(--shadow-card);
+  height: 600px; /* ENLARGED HEIGHT */
+  width: 800px;  /* ENLARGED WIDTH */
+  border: 6px solid var(--color-white);
+  background: #FFFFFF;
+}
+
+/* Concentric premium water ripple rings behind cards */
+.hampy-card-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  border-radius: calc(var(--radius-card) + 12px);
+  transform: translate(-50%, -50%) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.ripple-1 {
+  animation: cardRipple 6s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+}
+.ripple-2 {
+  animation: cardRipple 6s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+  animation-delay: 2s;
+}
+.ripple-3 {
+  animation: cardRipple 6s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+  animation-delay: 4s;
+}
+
+@keyframes cardRipple {
+  0% {
+    width: 95%;
+    height: 95%;
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  100% {
+    width: 145%;
+    height: 145%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+.hampy-media-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: calc(var(--radius-card) - 6px);
+}
+
+.hampy-pricing-img {
+  object-fit: cover !important;
+}
+
+/* SVG Pointer Overlay absolutely aligned over the card but drawing beyond it */
+.hampy-pointer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 15;
+  overflow: visible; /* Render lines outside the 800x600 bounds */
+}
+
+.pointer-line {
+  stroke-width: 7px;
+  stroke-dasharray: 12 10;
+  animation: dashMove 1.2s linear infinite;
+}
+
+.dirty-line {
+  stroke: #DC2626;
+}
+
+.clean-line {
+  stroke: #00D2C4;
+}
+
+@keyframes dashMove {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -44; }
+}
+
+.pointer-dot {
+  animation: dotPulse 1.5s ease-in-out infinite alternate;
+}
+
+.dirty-dot {
+  fill: #DC2626;
+}
+
+.clean-dot {
+  fill: #00D2C4;
+}
+
+@keyframes dotPulse {
+  0% { r: 7; opacity: 0.8; }
+  100% { r: 12; opacity: 1; }
+}
+
+/* Floating Callout Badges */
+.pointer-badge {
+  position: absolute;
+  z-index: 20;
+  padding: 16px 30px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  white-space: nowrap;
+  
+  /* Slide entrance initial state */
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.15, 0.85, 0.3, 1.2), transform 0.8s cubic-bezier(0.15, 0.85, 0.3, 1.2);
+}
+
+.hampy-centered-card-wrapper.visible .pointer-badge {
+  opacity: 1;
+}
+
+/* Staggered slide offsets based on side placement */
+.hampy-centered-card-wrapper:not(.visible) .c-top-left { transform: translateX(180px) scale(0.7); }
+.hampy-centered-card-wrapper:not(.visible) .c-bot-left { transform: translateX(180px) scale(0.7); }
+.hampy-centered-card-wrapper:not(.visible) .c-top-right { transform: translateX(-180px) scale(0.7); }
+.hampy-centered-card-wrapper:not(.visible) .c-bot-right { transform: translateX(-180px) scale(0.7); }
+
+/* Infinite float animation when parent card is visible in viewport */
+.hampy-centered-card-wrapper.visible .pointer-badge {
+  animation: badgeFloat 6s ease-in-out infinite alternate;
+}
+.hampy-centered-card-wrapper.visible .c-top-left { animation-delay: 0s; }
+.hampy-centered-card-wrapper.visible .c-bot-left { animation-delay: 1.5s; }
+.hampy-centered-card-wrapper.visible .c-top-right { animation-delay: 0.8s; }
+.hampy-centered-card-wrapper.visible .c-bot-right { animation-delay: 2.3s; }
+
+@keyframes badgeFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-16px); }
+}
+
+.pointer-badge:hover {
+  transform: translateY(-8px) scale(1.08) !important;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+}
+
+.dirty-callout {
+  background: #7F1D1D;
+  color: #FFFFFF;
+  border: 3px solid #EF4444;
+}
+
+.clean-callout {
+  background: #047857;
+  color: #FFFFFF;
+  border: 3px solid #00D2C4;
+}
+
+/* Relative coordinates relative to the 800px wide card bounds */
+.c-top-left {
+  top: 80px;
+  left: -440px;
+}
+
+.c-bot-left {
+  top: 420px;
+  left: -440px;
+}
+
+.c-top-right {
+  top: 80px;
+  right: -440px;
+}
+
+.c-bot-right {
+  top: 420px;
+  right: -440px;
+}
+
+.hampy-sweeping-arrow-box {
+  position: relative;
+  width: 100%;
+  height: 1200px;
+  margin: 20px 0;
+  z-index: 30;
+}
+
+.hampy-sweeping-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hampy-sweeping-text {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 64px;
+  fill: #052622;
+  letter-spacing: 0px;
+}
+
+.hampy-clean-card {
+  border: 6px solid #FFFFFF !important;
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.85), 0 24px 60px rgba(0, 229, 255, 0.3) !important;
+  animation: borderShine 4s ease-in-out infinite alternate !important;
+}
+
+@keyframes borderShine {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 24px 50px rgba(0, 229, 255, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 45px rgba(255, 255, 255, 1), 0 24px 70px rgba(0, 229, 255, 0.45);
+  }
+}
+
+/* ==========================================================================
+   SECTION 3: HOW WE MAKE YOU HAPPY (STEPS)
+   ========================================================================== */
+.steps-wrapper {
+  background-color: rgba(255, 255, 255, 0.05);
+  position: relative;
+  padding: 110px 0;
+  overflow: hidden;
+}
+
+.hampy-section-title {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: clamp(56px, 7vw, 92px);
+  line-height: 0.95;
+  color: var(--brand-teal-dark);
+  margin-bottom: 60px;
+  letter-spacing: -2px;
+  position: relative;
+  z-index: 10;
+}
+
+.hampy-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.hampy-step-grid-card {
+  background: var(--color-white);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  border: 1.5px solid rgba(0, 210, 196, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: var(--transition);
+  position: relative;
+}
+
+.hampy-step-grid-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 210, 196, 0.18);
+  border-color: var(--brand-mint);
+}
+
+.hampy-step-badge {
+  background: var(--brand-teal-dark);
+  color: var(--brand-mint);
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.hampy-step-thumb-box {
+  width: 100%;
+  height: 120px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  border: 2px solid #F1F5F9;
+}
+
+.hampy-step-thumb-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hampy-step-desc {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   SECTION 4: PRICING
+   ========================================================================== */
+.pricing-wrapper {
+  background-color: rgba(5, 38, 34, 0.04);
+  position: relative;
+  padding: 110px 0;
+  overflow: hidden;
+}
+
+.hampy-pricing-card {
+  border: 6px solid #FFFFFF !important;
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.85), 0 24px 60px rgba(0, 229, 255, 0.3) !important;
+  animation: borderShine 4s ease-in-out infinite alternate !important;
+}
+
+.hampy-pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hampy-white-card {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: 64px;
+  box-shadow: var(--shadow-card);
+  color: #0F172A;
+  border: 1px solid rgba(0, 210, 196, 0.12);
+}
+
+.hampy-card-title {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 0.95;
+  color: var(--brand-teal-dark);
+  margin-bottom: 10px;
+  letter-spacing: -1.5px;
+}
+
+.hampy-card-sub {
+  font-size: 20px;
+  color: #64748B;
+  margin-bottom: 36px;
+  font-weight: 700;
+}
+
+.hampy-price-rows {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.hampy-price-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1E293B;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.hampy-price-row strong {
+  font-weight: 900;
+  color: var(--brand-teal-dark);
+  font-size: 26px;
+}
+
+.hampy-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 36px;
+  border-radius: var(--radius-pill);
+  border: 2px solid #E2E8F0;
+  background: #FFFFFF;
+  color: var(--brand-teal-dark);
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.hampy-pill-btn:hover {
+  border-color: var(--brand-teal-dark);
+  background: var(--brand-teal-dark);
+  color: #FFFFFF;
+}
+
+.hampy-pill-btn:hover .hampy-arrow-circle {
+  background: var(--brand-mint);
+  color: var(--brand-teal-dark);
+}
+
+.hampy-arrow-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: var(--transition);
+}
+
+/* ==========================================================================
+   SECTION 5: REVIEWS
+   ========================================================================== */
+.reviews-wrapper {
+  background-color: rgba(255, 255, 255, 0.06);
+  position: relative;
+  padding: 110px 0;
+  overflow: hidden;
+}
+
+.hampy-reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 56px;
+  position: relative;
+  z-index: 10;
+}
+
+.hampy-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  position: relative;
+  z-index: 10;
+}
+
+.hampy-review-card {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: 44px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+  border: 1px solid rgba(0, 210, 196, 0.12);
+}
+
+.hampy-review-author {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--brand-teal-dark);
+  margin-bottom: 16px;
+}
+
+.hampy-review-text {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.65;
+  margin-bottom: 32px;
+  font-weight: 600;
+}
+
+.hampy-review-stars {
+  color: var(--brand-gold);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 22px;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   SECTION 6: ARCH FOOTER BANNER
+   ========================================================================== */
+.hampy-arch-divider {
+  width: 100%;
+  height: 90px;
+  display: block;
+  background: var(--bg-reviews);
+}
+
+.hampy-footer-banner {
+  background: var(--bg-footer);
+  color: #FFFFFF;
+  padding: 90px 0 110px;
+  position: relative;
+}
+
+.hampy-banner-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.hampy-banner-sub {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--brand-cyan);
+  margin-bottom: 18px;
+}
+
+.hampy-banner-title {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: clamp(52px, 6vw, 80px);
+  line-height: 0.96;
+  color: #FFFFFF;
+  margin-bottom: 44px;
+  letter-spacing: -1.5px;
+}
+
+/* Modal Drawer */
+.hampy-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(14px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.hampy-modal-card {
+  max-width: 600px;
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: var(--radius-card);
+  padding: 56px;
+  position: relative;
+  color: #0F172A;
+  box-shadow: 0 35px 80px rgba(0,0,0,0.35);
+}
+
+.hampy-input {
+  width: 100%;
+  padding: 18px 24px;
+  border-radius: 16px;
+  border: 1px solid #CBD5E1;
+  font-size: 17px;
+  margin-bottom: 20px;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+.hampy-submit-btn {
+  width: 100%;
+  background: #000000;
+  color: #FFFFFF;
+  padding: 20px;
+  border-radius: var(--radius-pill);
+  border: none;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 19px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.hampy-submit-btn:hover {
+  background: var(--brand-teal-dark);
+}
+
+.hampy-view-panel {
+  display: none;
+}
+.hampy-view-panel.active {
+  display: block;
+}
+
+/* Ambient Background Bubble Flow */
+.ambient-bubble-stream {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2; /* Renders behind cards but above backgrounds */
+  overflow: hidden;
+}
+
+.ambient-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.3) 40%, rgba(0, 229, 255, 0.35) 70%, rgba(255, 255, 255, 0.75) 100%);
+  box-shadow: inset 0 0 16px rgba(255, 255, 255, 0.9), 0 10px 25px rgba(0, 229, 255, 0.15);
+  backdrop-filter: blur(1px);
+  will-change: top, transform;
+}
+
+@keyframes ambientRise {
+  0% {
+    top: 100%;
+    transform: translateX(0) scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+  2% {
+    opacity: 0.75;
+  }
+  98% {
+    opacity: 0.75;
+  }
+  100% {
+    top: -200px;
+    transform: translateX(var(--drift, 50px)) scale(1.2) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hampy-nav-capsule { display: none; }
+  .hampy-hero { grid-template-columns: 1fr; }
+  .hampy-sweeping-arrow-box { display: none; }
+  .hampy-pricing-grid { grid-template-columns: 1fr; }
+  .hampy-reviews-grid { grid-template-columns: 1fr; }
+  .hampy-banner-grid { grid-template-columns: 1fr; }
+  .hampy-steps-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hampy-step-grid-card { width: 100%; align-items: center; text-align: center; }
+  .pointer-badge { position: static; margin: 8px 0; }
+  .hampy-media-card { width: 100% !important; height: 380px !important; }
+  .hampy-plans-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+}
+
+/* Pricing Page Styles & Interactive Calculator */
+.hampy-plans-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.calc-freq-option {
+  border: none;
+  outline: none;
+  background: #F1F5F9;
+  color: #475569;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 16px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.calc-freq-option.active {
+  background: var(--brand-teal-dark) !important;
+  color: var(--brand-mint) !important;
+}
+
+.calc-freq-option:not(.active):hover {
+  background: #E2E8F0 !important;
+}
+
+#calc-minus:hover, #calc-plus:hover {
+  border-color: var(--brand-teal-dark) !important;
+  color: var(--brand-mint) !important;
+  background: var(--brand-teal-dark) !important;
+}
+
+/* Booking Page Styles & Stepped Form Elements */
+.hampy-booking-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .hampy-booking-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.booking-summary-card {
+  background: #FFFFFF;
+  border-radius: 28px;
+  border: 3px solid rgba(0, 210, 196, 0.15);
+  padding: 40px;
+  position: sticky;
+  top: 100px;
+  box-shadow: 0 30px 60px rgba(0, 210, 196, 0.05);
+}
+
+.plan-pill-opt {
+  flex: 1;
+  border: 3px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #FFFFFF;
+}
+
+.plan-pill-opt strong {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: #0F172A;
+}
+
+.plan-pill-opt span {
+  font-size: 14px;
+  font-weight: 800;
+  color: #64748B;
+}
+
+.plan-pill-opt.active {
+  border-color: var(--brand-teal-dark);
+  background: rgba(0, 210, 196, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 210, 196, 0.1);
+}
+
+.plan-pill-opt.active strong {
+  color: var(--brand-teal-dark);
+}
+
+.plan-pill-opt.active span {
+  color: var(--brand-teal-dark);
+}
+
+.plan-pill-opt:not(.active):hover {
+  border-color: #CBD5E1;
+}
+
+.count-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #CBD5E1;
+  background: #FFFFFF;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.count-btn:hover {
+  border-color: var(--brand-teal-dark);
+  color: var(--brand-mint);
+  background: var(--brand-teal-dark);
+}
+
+.hampy-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hampy-check-row input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.custom-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #CBD5E1;
+  border-radius: 6px;
+  display: inline-block;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  position: relative;
+  background: #FFFFFF;
+  margin-top: 2px;
+}
+
+.hampy-check-row input:checked ~ .custom-checkbox {
+  border-color: var(--brand-mint);
+  background-color: var(--brand-mint);
+}
+
+.custom-checkbox::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.hampy-check-row input:checked ~ .custom-checkbox::after {
+  display: block;
+}
+
+.check-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1.4;
+}
+
+
