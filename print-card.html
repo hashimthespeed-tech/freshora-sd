@@ -295,37 +295,45 @@
       display: block;
     }
 
-    /* Print Overrides (Formats 4 cards on a single sheet of paper in a 2x2 grid) */
+    /* Print Overrides (Forces exactly a 2x2 grid of 4 cards on a single portrait page) */
     @media print {
-      body {
-        background: #FFFFFF !important;
-        padding: 0;
-        margin: 0;
+      @page {
+        size: letter portrait;
+        margin: 0.2in;
       }
 
-      .no-print-header {
+      body {
+        background: #FFFFFF !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .no-print-header, .ambient-bubble-stream, .ambient-bubble {
         display: none !important;
       }
 
       .cards-print-grid {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        grid-template-rows: 1fr 1fr !important;
-        gap: 15px !important;
+        display: block !important;
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0.25in !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
         box-sizing: border-box !important;
       }
 
       .bin-card {
+        display: inline-flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        box-sizing: border-box !important;
+        width: 3.7in !important;
+        height: 5.0in !important;
+        margin: 0.1in !important;
+        float: left !important;
         page-break-inside: avoid !important;
-        margin: 0 auto !important;
-        width: 3.35in !important;
-        height: 5.0in !important; /* Maintain 3:4 aspect ratio */
+        break-inside: avoid !important;
         box-shadow: none !important;
-        border: 3px solid var(--brand-mint) !important;
+        border: 3.5px solid var(--brand-mint) !important;
         background: #FFFFFF !important;
         padding: 16px 14px !important;
         border-radius: 20px !important;
