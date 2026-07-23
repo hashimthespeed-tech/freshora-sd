@@ -79,9 +79,9 @@
       z-index: 10;
     }
 
-    /* Premium Business Card Canvas (3.5" x 2" Horizontal Card) */
+    /* Premium Business Card Canvas (3.5" x 2" Horizontal Card with Solid Mint Hero Background) */
     .biz-card {
-      background: #FFFFFF;
+      background: var(--brand-mint); /* Vibrant Teal/Mint Hero Background */
       color: var(--brand-teal-dark);
       width: 100%;
       height: 228px; /* High-res preview ratio equivalent to 3.5in x 2in */
@@ -90,42 +90,42 @@
       position: relative;
       overflow: hidden;
       box-sizing: border-box;
-      padding: 18px 20px;
+      padding: 20px 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border: 2px solid rgba(0, 210, 196, 0.25);
+      border: 2px solid rgba(10, 42, 42, 0.1);
       transition: var(--transition);
     }
 
     .biz-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0, 210, 196, 0.1);
-      border-color: var(--brand-mint);
+      box-shadow: 0 14px 28px rgba(0, 210, 196, 0.2);
     }
 
     /* 3D Glossy Soap Bubbles on Business Card */
     .biz-bubble {
       position: absolute;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.15) 45%, rgba(0, 210, 196, 0.16) 75%, rgba(255, 255, 255, 0.8) 100%);
-      box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.9), 0 3px 8px rgba(0, 210, 196, 0.08);
-      border: 1px solid rgba(0, 210, 196, 0.25);
+      background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.3) 40%, rgba(10, 42, 42, 0.15) 70%, rgba(255, 255, 255, 0.85) 100%);
+      box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.9), 0 4px 10px rgba(10, 42, 42, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.35);
       pointer-events: none;
-      z-index: 1;
+      z-index: 2;
     }
     
-    .bb-1 { width: 36px; height: 36px; top: 12px; left: 15px; }
-    .bb-2 { width: 22px; height: 22px; top: 44px; left: 38px; }
-    .bb-3 { width: 44px; height: 44px; bottom: 15px; right: 90px; }
-    .bb-4 { width: 28px; height: 28px; top: 18px; right: 110px; }
+    .bb-1 { width: 38px; height: 38px; top: 12px; left: 160px; opacity: 0.85; }
+    .bb-2 { width: 24px; height: 24px; bottom: 18px; left: 130px; opacity: 0.7; }
+    .bb-3 { width: 46px; height: 46px; top: 75px; right: 10px; opacity: 0.9; }
+    .bb-4 { width: 30px; height: 30px; top: 15px; right: 90px; opacity: 0.8; }
 
     /* Left layout: Logo and Branding */
     .biz-left {
-      flex: 1.2;
+      flex: 1.25;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
+      height: 100%;
       position: relative;
       z-index: 5;
     }
@@ -133,12 +133,11 @@
     .biz-logo {
       display: flex;
       flex-direction: column;
-      margin-bottom: 8px;
     }
 
     .logo-main-text {
       font-family: var(--font-serif);
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 900;
       color: var(--brand-teal-dark);
       letter-spacing: -0.5px;
@@ -148,32 +147,35 @@
     .logo-sub-text {
       font-family: var(--font-sans);
       font-size: 9.5px;
-      font-weight: 800;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--brand-mint);
+      color: var(--brand-teal-dark);
+      opacity: 0.8;
       margin-top: 3px;
     }
 
+    /* Hero Text: "My happy freshora trash day." */
     .biz-tagline {
-      font-size: 11px;
-      font-weight: 700;
-      color: #64748B;
-      line-height: 1.35;
-      margin: 4px 0 0;
-      max-width: 170px;
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--brand-teal-dark);
+      line-height: 1.15;
+      margin: 12px 0;
+      letter-spacing: -0.3px;
+      max-width: 175px;
     }
 
-    /* Small Circular Clean Bin Sticker Badge */
+    /* Mini Circular Clean Bin Sticker Badge */
     .biz-bin-badge {
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      border: 1.5px solid var(--brand-mint);
+      border: 2px solid var(--brand-teal-dark);
       overflow: hidden;
       background: #FFFFFF;
-      box-shadow: 0 2px 6px rgba(0, 210, 196, 0.12);
-      margin-top: 10px;
+      box-shadow: 0 2px 8px rgba(10, 42, 42, 0.15);
       display: block;
     }
 
@@ -183,10 +185,10 @@
       object-fit: cover;
     }
 
-    /* Vertical dotted separation line */
+    /* Vertical separation line */
     .biz-separator {
-      height: 70%;
-      border-left: 1.5px dashed rgba(0, 210, 196, 0.25);
+      height: 80%;
+      border-left: 1.5px dashed rgba(10, 42, 42, 0.2);
       margin: 0 16px;
       position: relative;
       z-index: 5;
@@ -194,10 +196,11 @@
 
     /* Right layout: Contact & QR Code details */
     .biz-right {
-      flex: 1.3;
+      flex: 1.2;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: center;
+      height: 100%;
       position: relative;
       z-index: 5;
     }
@@ -205,55 +208,67 @@
     .biz-contact {
       display: flex;
       flex-direction: column;
+      gap: 5px;
+      margin-top: 4px;
     }
 
     .biz-name {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 900;
       color: var(--brand-teal-dark);
-      margin-bottom: 2px;
+      line-height: 1;
     }
 
     .biz-title {
-      font-size: 9px;
-      font-weight: 800;
+      font-size: 8.5px;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      color: var(--brand-mint);
-      margin-bottom: 10px;
+      color: var(--brand-teal-dark);
+      opacity: 0.75;
+      margin-bottom: 8px;
+      line-height: 1;
     }
 
+    /* Contact Details Styled as White Capsules matching website UI badges */
     .biz-item {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 800;
-      color: #475569;
-      margin-bottom: 4px;
-      display: flex;
+      color: var(--brand-teal-dark);
+      background: #FFFFFF;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(10, 42, 42, 0.08);
+      display: inline-flex;
       align-items: center;
-      gap: 4px;
-    }
-
-    .biz-item:last-child {
-      margin-bottom: 0;
+      gap: 5px;
+      box-shadow: 0 2px 4px rgba(10, 42, 42, 0.04);
+      width: fit-content;
+      white-space: nowrap;
     }
 
     .biz-item span {
-      color: var(--brand-teal-dark);
       font-weight: 900;
     }
 
+    .biz-bottom-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+
     .biz-qr-wrapper {
-      width: 60px;
-      height: 60px;
+      width: 54px;
+      height: 54px;
       background: #FFFFFF;
-      padding: 3px;
-      border-radius: 8px;
-      border: 1px solid rgba(0, 210, 196, 0.2);
+      padding: 4px;
+      border-radius: 10px;
+      border: 1.5px solid var(--brand-teal-dark);
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      margin-left: 10px;
+      box-shadow: 0 4px 10px rgba(10, 42, 42, 0.12);
     }
 
     .biz-qr-wrapper img {
@@ -262,11 +277,21 @@
       display: block;
     }
 
+    .biz-scan-text {
+      font-size: 8.5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--brand-teal-dark);
+      line-height: 1.2;
+      max-width: 75px;
+    }
+
     /* Print Overrides (Forces exactly 10 cards in a 2x5 grid on a single portrait page) */
     @media print {
       @page {
         size: letter portrait;
-        margin: 0.5in 0.4in; /* Perfect margins for a standard 10-up layout sheet */
+        margin: 0.5in 0.4in;
       }
 
       body {
@@ -284,21 +309,21 @@
         flex-wrap: wrap !important;
         justify-content: center !important;
         align-content: flex-start !important;
-        width: 7.7in !important; /* Total printing width for 2 columns of 3.5in + margins */
+        width: 7.7in !important;
         margin: 0 auto !important;
         padding: 0 !important;
-        gap: 0 !important; /* No gaps so they line up for single cuts */
+        gap: 0 !important;
         box-sizing: border-box !important;
       }
 
       .biz-card {
         width: 3.5in !important;
         height: 2.0in !important;
-        margin: 0 !important; /* Align flush for easy cutting */
-        border: 1px solid rgba(0, 210, 196, 0.2) !important; /* Thin gray/mint cutting borders */
-        border-radius: 0 !important; /* Square corners on print for clean cuts */
+        margin: 0 !important;
+        border: 1px solid rgba(10, 42, 42, 0.15) !important;
+        border-radius: 0 !important; /* Square edges for card cutters */
         box-shadow: none !important;
-        background: #FFFFFF !important;
+        background: var(--brand-mint) !important;
         padding: 12px 14px !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
@@ -306,22 +331,23 @@
         print-color-adjust: exact !important;
       }
 
-      /* Precise sizing of elements inside the print grid */
-      .biz-card .logo-main-text { font-size: 21px !important; }
+      /* Scaling inside print grid */
+      .biz-card .logo-main-text { font-size: 23px !important; }
       .biz-card .logo-sub-text { font-size: 8px !important; }
-      .biz-card .biz-tagline { font-size: 8.5px !important; max-width: 130px !important; }
-      .biz-card .biz-bin-badge { width: 28px !important; height: 28px !important; margin-top: 6px !important; }
+      .biz-card .biz-tagline { font-size: 15px !important; margin: 6px 0 !important; max-width: 130px !important; }
+      .biz-card .biz-bin-badge { width: 28px !important; height: 28px !important; border-width: 1.5px !important; }
       .biz-card .biz-separator { margin: 0 10px !important; }
-      .biz-card .biz-name { font-size: 11px !important; }
-      .biz-card .biz-title { font-size: 7.5px !important; margin-bottom: 6px !important; }
-      .biz-card .biz-item { font-size: 8px !important; margin-bottom: 3px !important; }
-      .biz-card .biz-qr-wrapper { width: 44px !important; height: 44px !important; margin-left: 6px !important; }
+      .biz-card .biz-name { font-size: 12px !important; }
+      .biz-card .biz-title { font-size: 7.5px !important; margin-bottom: 4px !important; }
+      .biz-card .biz-item { font-size: 8px !important; padding: 2px 7px !important; gap: 3px !important; }
+      .biz-card .biz-qr-wrapper { width: 44px !important; height: 44px !important; border-width: 1px !important; }
+      .biz-card .biz-scan-text { font-size: 7px !important; max-width: 60px !important; }
 
-      /* Scale background bubbles on print */
-      .bb-1 { width: 24px !important; height: 24px !important; }
-      .bb-2 { width: 14px !important; height: 14px !important; }
-      .bb-3 { width: 30px !important; height: 30px !important; }
-      .bb-4 { width: 18px !important; height: 18px !important; }
+      /* Scale bubbles */
+      .bb-1 { width: 26px !important; height: 26px !important; left: 125px !important; }
+      .bb-2 { width: 16px !important; height: 16px !important; left: 100px !important; }
+      .bb-3 { width: 32px !important; height: 32px !important; }
+      .bb-4 { width: 20px !important; height: 20px !important; }
     }
   </style>
 </head>
@@ -333,7 +359,7 @@
   <!-- Web View Controls Panel -->
   <div class="no-print-header">
     <div>
-      <h1>Printable Business Cards</h1>
+      <h1>Printable Business Cards (Teal Hero Style)</h1>
       <p>Click print to output a 2x5 grid (10 identical business cards) onto a single sheet of paper.</p>
     </div>
     <button class="print-btn" onclick="window.print()">🖨️ Print Business Cards</button>
@@ -341,8 +367,6 @@
 
   <!-- Business Cards Grid (Prints 10-up on a single US Letter page) -->
   <div class="biz-cards-grid">
-    
-    <!-- We generate 10 identical business card blocks -->
     
     <!-- CARD 1 -->
     <div class="biz-card">
@@ -356,7 +380,7 @@
           <span class="logo-main-text">freshora</span>
           <span class="logo-sub-text">happy bins</span>
         </div>
-        <p class="biz-tagline">Professional Trash Can Cleaning & Sanitizing</p>
+        <p class="biz-tagline">My happy freshora trash day.</p>
         <div class="biz-bin-badge">
           <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin">
         </div>
@@ -370,10 +394,12 @@
           <div class="biz-title">Co-Owner / Founder</div>
           <div class="biz-item">📞 <span>(619) 918-5500</span></div>
           <div class="biz-item">📧 <span>fresorasd@gmail.com</span></div>
-          <div class="biz-item">🌐 <span>freshorasd.netlify.app</span></div>
         </div>
-        <div class="biz-qr-wrapper">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+        <div class="biz-bottom-row">
+          <div class="biz-scan-text">Scan to book online!</div>
+          <div class="biz-qr-wrapper">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+          </div>
         </div>
       </div>
     </div>
@@ -390,7 +416,7 @@
           <span class="logo-main-text">freshora</span>
           <span class="logo-sub-text">happy bins</span>
         </div>
-        <p class="biz-tagline">Professional Trash Can Cleaning & Sanitizing</p>
+        <p class="biz-tagline">My happy freshora trash day.</p>
         <div class="biz-bin-badge">
           <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin">
         </div>
@@ -404,10 +430,12 @@
           <div class="biz-title">Co-Owner / Founder</div>
           <div class="biz-item">📞 <span>(619) 918-5500</span></div>
           <div class="biz-item">📧 <span>fresorasd@gmail.com</span></div>
-          <div class="biz-item">🌐 <span>freshorasd.netlify.app</span></div>
         </div>
-        <div class="biz-qr-wrapper">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+        <div class="biz-bottom-row">
+          <div class="biz-scan-text">Scan to book online!</div>
+          <div class="biz-qr-wrapper">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+          </div>
         </div>
       </div>
     </div>
@@ -424,7 +452,7 @@
           <span class="logo-main-text">freshora</span>
           <span class="logo-sub-text">happy bins</span>
         </div>
-        <p class="biz-tagline">Professional Trash Can Cleaning & Sanitizing</p>
+        <p class="biz-tagline">My happy freshora trash day.</p>
         <div class="biz-bin-badge">
           <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin">
         </div>
@@ -438,10 +466,12 @@
           <div class="biz-title">Co-Owner / Founder</div>
           <div class="biz-item">📞 <span>(619) 918-5500</span></div>
           <div class="biz-item">📧 <span>fresorasd@gmail.com</span></div>
-          <div class="biz-item">🌐 <span>freshorasd.netlify.app</span></div>
         </div>
-        <div class="biz-qr-wrapper">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+        <div class="biz-bottom-row">
+          <div class="biz-scan-text">Scan to book online!</div>
+          <div class="biz-qr-wrapper">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+          </div>
         </div>
       </div>
     </div>
@@ -458,7 +488,7 @@
           <span class="logo-main-text">freshora</span>
           <span class="logo-sub-text">happy bins</span>
         </div>
-        <p class="biz-tagline">Professional Trash Can Cleaning & Sanitizing</p>
+        <p class="biz-tagline">My happy freshora trash day.</p>
         <div class="biz-bin-badge">
           <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin">
         </div>
@@ -472,10 +502,12 @@
           <div class="biz-title">Co-Owner / Founder</div>
           <div class="biz-item">📞 <span>(619) 918-5500</span></div>
           <div class="biz-item">📧 <span>fresorasd@gmail.com</span></div>
-          <div class="biz-item">🌐 <span>freshorasd.netlify.app</span></div>
         </div>
-        <div class="biz-qr-wrapper">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+        <div class="biz-bottom-row">
+          <div class="biz-scan-text">Scan to book online!</div>
+          <div class="biz-qr-wrapper">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+          </div>
         </div>
       </div>
     </div>
@@ -492,7 +524,7 @@
           <span class="logo-main-text">freshora</span>
           <span class="logo-sub-text">happy bins</span>
         </div>
-        <p class="biz-tagline">Professional Trash Can Cleaning & Sanitizing</p>
+        <p class="biz-tagline">My happy freshora trash day.</p>
         <div class="biz-bin-badge">
           <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin">
         </div>
@@ -506,10 +538,12 @@
           <div class="biz-title">Co-Owner / Founder</div>
           <div class="biz-item">📞 <span>(619) 918-5500</span></div>
           <div class="biz-item">📧 <span>fresorasd@gmail.com</span></div>
-          <div class="biz-item">🌐 <span>freshorasd.netlify.app</span></div>
         </div>
-        <div class="biz-qr-wrapper">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+        <div class="biz-bottom-row">
+          <div class="biz-scan-text">Scan to book online!</div>
+          <div class="biz-qr-wrapper">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+          </div>
         </div>
       </div>
     </div>
@@ -526,7 +560,7 @@
           <span class="logo-main-text">freshora</span>
           <span class="logo-sub-text">happy bins</span>
         </div>
-        <p class="biz-tagline">Professional Trash Can Cleaning & Sanitizing</p>
+        <p class="biz-tagline">My happy freshora trash day.</p>
         <div class="biz-bin-badge">
           <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin">
         </div>
@@ -540,10 +574,12 @@
           <div class="biz-title">Co-Owner / Founder</div>
           <div class="biz-item">📞 <span>(619) 918-5500</span></div>
           <div class="biz-item">📧 <span>fresorasd@gmail.com</span></div>
-          <div class="biz-item">🌐 <span>freshorasd.netlify.app</span></div>
         </div>
-        <div class="biz-qr-wrapper">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+        <div class="biz-bottom-row">
+          <div class="biz-scan-text">Scan to book online!</div>
+          <div class="biz-qr-wrapper">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+          </div>
         </div>
       </div>
     </div>
@@ -560,7 +596,7 @@
           <span class="logo-main-text">freshora</span>
           <span class="logo-sub-text">happy bins</span>
         </div>
-        <p class="biz-tagline">Professional Trash Can Cleaning & Sanitizing</p>
+        <p class="biz-tagline">My happy freshora trash day.</p>
         <div class="biz-bin-badge">
           <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin">
         </div>
@@ -574,10 +610,12 @@
           <div class="biz-title">Co-Owner / Founder</div>
           <div class="biz-item">📞 <span>(619) 918-5500</span></div>
           <div class="biz-item">📧 <span>fresorasd@gmail.com</span></div>
-          <div class="biz-item">🌐 <span>freshorasd.netlify.app</span></div>
         </div>
-        <div class="biz-qr-wrapper">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+        <div class="biz-bottom-row">
+          <div class="biz-scan-text">Scan to book online!</div>
+          <div class="biz-qr-wrapper">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+          </div>
         </div>
       </div>
     </div>
@@ -594,7 +632,7 @@
           <span class="logo-main-text">freshora</span>
           <span class="logo-sub-text">happy bins</span>
         </div>
-        <p class="biz-tagline">Professional Trash Can Cleaning & Sanitizing</p>
+        <p class="biz-tagline">My happy freshora trash day.</p>
         <div class="biz-bin-badge">
           <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin">
         </div>
@@ -608,10 +646,12 @@
           <div class="biz-title">Co-Owner / Founder</div>
           <div class="biz-item">📞 <span>(619) 918-5500</span></div>
           <div class="biz-item">📧 <span>fresorasd@gmail.com</span></div>
-          <div class="biz-item">🌐 <span>freshorasd.netlify.app</span></div>
         </div>
-        <div class="biz-qr-wrapper">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+        <div class="biz-bottom-row">
+          <div class="biz-scan-text">Scan to book online!</div>
+          <div class="biz-qr-wrapper">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+          </div>
         </div>
       </div>
     </div>
@@ -628,7 +668,7 @@
           <span class="logo-main-text">freshora</span>
           <span class="logo-sub-text">happy bins</span>
         </div>
-        <p class="biz-tagline">Professional Trash Can Cleaning & Sanitizing</p>
+        <p class="biz-tagline">My happy freshora trash day.</p>
         <div class="biz-bin-badge">
           <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin">
         </div>
@@ -642,10 +682,12 @@
           <div class="biz-title">Co-Owner / Founder</div>
           <div class="biz-item">📞 <span>(619) 918-5500</span></div>
           <div class="biz-item">📧 <span>fresorasd@gmail.com</span></div>
-          <div class="biz-item">🌐 <span>freshorasd.netlify.app</span></div>
         </div>
-        <div class="biz-qr-wrapper">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+        <div class="biz-bottom-row">
+          <div class="biz-scan-text">Scan to book online!</div>
+          <div class="biz-qr-wrapper">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+          </div>
         </div>
       </div>
     </div>
@@ -662,7 +704,7 @@
           <span class="logo-main-text">freshora</span>
           <span class="logo-sub-text">happy bins</span>
         </div>
-        <p class="biz-tagline">Professional Trash Can Cleaning & Sanitizing</p>
+        <p class="biz-tagline">My happy freshora trash day.</p>
         <div class="biz-bin-badge">
           <img src="assets/clean-sparkling-bin.jpg" alt="Sparkling Clean Bin">
         </div>
@@ -676,10 +718,12 @@
           <div class="biz-title">Co-Owner / Founder</div>
           <div class="biz-item">📞 <span>(619) 918-5500</span></div>
           <div class="biz-item">📧 <span>fresorasd@gmail.com</span></div>
-          <div class="biz-item">🌐 <span>freshorasd.netlify.app</span></div>
         </div>
-        <div class="biz-qr-wrapper">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+        <div class="biz-bottom-row">
+          <div class="biz-scan-text">Scan to book online!</div>
+          <div class="biz-qr-wrapper">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://freshorasd.netlify.app" alt="QR Code">
+          </div>
         </div>
       </div>
     </div>
