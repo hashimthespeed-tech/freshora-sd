@@ -223,34 +223,62 @@
 
     .promo-box {
       border-top: 1.5px dashed rgba(0, 210, 196, 0.3);
-      padding-top: 20px;
+      padding-top: 18px;
       margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+
+    .promo-left {
+      flex: 1;
+    }
+
+    .promo-right {
+      width: 80px;
+      height: 80px;
+      background: #FFFFFF;
+      padding: 4px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(0, 210, 196, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+
+    .promo-right img {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     .contact-title {
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       color: #64748B;
       font-weight: 900;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .contact-info {
-      font-size: 22px;
+      font-size: 16px;
       font-weight: 900;
       color: var(--brand-teal-dark);
       margin: 2px 0;
     }
 
     .contact-email {
-      font-size: 16px;
-      font-weight: 900;
+      font-size: 14px;
+      font-weight: 800;
       color: var(--brand-teal-dark);
-      opacity: 0.95;
+      opacity: 0.85;
       text-decoration: underline;
       display: block;
-      margin-top: 4px;
+      margin-top: 2px;
     }
 
     .tag-cutout-hint {
@@ -345,9 +373,14 @@
 
       <div class="card-bottom">
         <div class="promo-box">
-          <div class="contact-title">Book Online / Contact Us</div>
-          <div class="contact-info">fresorasd.com</div>
-          <div class="contact-email">fresorasd@gmail.com</div>
+          <div class="promo-left">
+            <div class="contact-title">Book Online / Contact Us</div>
+            <div class="contact-info">freshorasd.netlify.app</div>
+            <div class="contact-email">freshorasd@gmail.com</div>
+          </div>
+          <div class="promo-right">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://freshorasd.netlify.app" alt="Scan QR Code to Book">
+          </div>
         </div>
       </div>
     </div>
@@ -386,9 +419,14 @@
 
       <div class="card-bottom">
         <div class="promo-box">
-          <div class="contact-title">Book Online / Contact Us</div>
-          <div class="contact-info">fresorasd.com</div>
-          <div class="contact-email">fresorasd@gmail.com</div>
+          <div class="promo-left">
+            <div class="contact-title">Book Online / Contact Us</div>
+            <div class="contact-info">freshorasd.netlify.app</div>
+            <div class="contact-email">freshorasd@gmail.com</div>
+          </div>
+          <div class="promo-right">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://freshorasd.netlify.app" alt="Scan QR Code to Book">
+          </div>
         </div>
       </div>
     </div>
